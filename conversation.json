@@ -2250,6 +2250,10 @@
         "media": {
           "description": "Contains context information about current active media session.",
           "$ref": "#/definitions/MediaContext"
+        },
+        "canvas": {
+          "description": "Contains context information about current canvas.",
+          "$ref": "#/definitions/CanvasContext"
         }
       }
     },
@@ -2261,6 +2265,15 @@
           "description": "Media progress of current active media file.",
           "type": "string",
           "format": "google-duration"
+        }
+      }
+    },
+    "CanvasContext": {
+      "description": "Contains context information about current canvas.",
+      "type": "object",
+      "properties": {
+        "state": {
+          "description": "Optional. State set by 3P Interactive Canvas app. This is only set for request, not for response. For example, if this is a recipe app, the state can be a value of struct : { \"current_page\" : 5, \"last_page\" : 3, } The size limit is 50KB."
         }
       }
     },
