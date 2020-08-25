@@ -2321,10 +2321,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "languageCode": {
-          "description": "Expected language (in BCP-47 format) of user's next input.\nFor a list of supported languages, see\nhttps://developers.google.com/assistant/console/languages-locales",
-          "type": "string"
         }
       }
     }
