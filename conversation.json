@@ -2135,6 +2135,19 @@
           "items": {
             "$ref": "#/definitions/PackageEntitlements"
           }
+        },
+        "permissions": {
+          "description": "Contains permissions granted by user to this Action.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "PERMISSION_UNSPECIFIED",
+              "DEVICE_PRECISE_LOCATION",
+              "DEVICE_COARSE_LOCATION",
+              "UPDATE"
+            ]
+          }
         }
       }
     },
@@ -2254,6 +2267,24 @@
               "WEB_LINK"
             ]
           }
+        },
+        "currentLocation": {
+          "description": "Optional. The device location of the user. Note, this is only populated after location permissions are granted by the end user. See the location message for more details on which fields are set depending on coarse vs. fine grained permission.",
+          "$ref": "#/definitions/Location"
+        }
+      }
+    },
+    "Location": {
+      "description": "Container that represents a location.",
+      "type": "object",
+      "properties": {
+        "coordinates": {
+          "description": "Geo coordinates. Requires the [DEVICE_PRECISE_LOCATION] permission.",
+          "$ref": "#/definitions/LatLng"
+        },
+        "postalAddress": {
+          "description": "Postal address. Requires the [DEVICE_PRECISE_LOCATION] or [DEVICE_COARSE_LOCATION] permission. When the coarse location permission is granted, only the 'postal_code' and 'locality' fields are expected to be populated. Precise location permission will populate additional fields like 'administrative_area' and 'address_lines'.",
+          "$ref": "#/definitions/PostalAddress"
         }
       }
     },
