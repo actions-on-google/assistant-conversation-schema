@@ -8,7 +8,7 @@
       "type": "object",
       "properties": {
         "handler": {
-          "description": "Required. Information to fulfillment on how to handle the request. For\nexample a request intending to get a fact might have a handler with a name\nof \"getFact\".",
+          "description": "Required. Information to fulfillment on how to handle the request. For example a request intending to get a fact might have a handler with a name of \"getFact\".",
           "$ref": "#/definitions/Handler"
         },
         "intent": {
@@ -16,7 +16,7 @@
           "$ref": "#/definitions/Intent"
         },
         "scene": {
-          "description": "Optional. Info on the current and next scene when the function was called.\nWill be filled when the fulfillment call is made\nwithin the scope of a scene.",
+          "description": "Optional. Info on the current and next scene when the function was called. Will be filled when the fulfillment call is made within the scope of a scene.",
           "$ref": "#/definitions/Scene"
         },
         "session": {
@@ -28,7 +28,7 @@
           "$ref": "#/definitions/User"
         },
         "home": {
-          "description": "Optional. Information related to the HomeGraph structure that the target device\nbelongs to. See\nhttps://developers.google.com/actions/smarthome/concepts/homegraph.",
+          "description": "Optional. Information related to the HomeGraph structure that the target device belongs to. See https://developers.google.com/actions/smarthome/concepts/homegraph.",
           "$ref": "#/definitions/Home"
         },
         "device": {
@@ -36,13 +36,13 @@
           "$ref": "#/definitions/Device"
         },
         "context": {
-          "description": "Optional. Information of current context of the request. Includes but isn't limited\nto active media session info or canvas info.",
+          "description": "Optional. Information of current context of the request. Includes but isn't limited to active media session info or canvas info.",
           "$ref": "#/definitions/Context"
         }
       }
     },
     "Handler": {
-      "description": "Represents a fulfillment handler that maps event information\nfrom Actions on Google to fulfillment. Use the handler name to determine what\ncode you should run in fulfillment.  For instance, a handler might be\nused to get information on a user's order information with a handler name\nlike \"OrderLookup\" while another might get product information from a\ndatabase, with a handler name like \"GetProductInfo\".",
+      "description": "Represents a fulfillment handler that maps event information from Actions on Google to fulfillment. Use the handler name to determine what code you should run in fulfillment. For instance, a handler might be used to get information on a user's order information with a handler name like \"OrderLookup\" while another might get product information from a database, with a handler name like \"GetProductInfo\".",
       "type": "object",
       "properties": {
         "name": {
@@ -60,11 +60,11 @@
           "type": "string"
         },
         "params": {
-          "description": "Required. Represents parameters identified as part of intent matching.\nThis is a map of the name of the identified parameter to the value of the\nparameter identified from user input. All parameters defined in\nthe matched intent that are identified will be surfaced here.",
+          "description": "Required. Represents parameters identified as part of intent matching. This is a map of the name of the identified parameter to the value of the parameter identified from user input. All parameters defined in the matched intent that are identified will be surfaced here.",
           "type": "object"
         },
         "query": {
-          "description": "Optional. Typed or spoken input from the end user that matched this intent.\nThis will be populated when an intent is matched, based on the user input.",
+          "description": "Optional. Typed or spoken input from the end user that matched this intent. This will be populated when an intent is matched, based on the user input.",
           "type": "string"
         }
       }
@@ -78,12 +78,12 @@
           "type": "string"
         },
         "resolved": {
-          "description": "Required. Structured value for parameter extracted from user input.\nThis will only be populated if the parameter is defined in the matched\nintent and the value of the parameter could be identified during intent\nmatching."
+          "description": "Required. Structured value for parameter extracted from user input. This will only be populated if the parameter is defined in the matched intent and the value of the parameter could be identified during intent matching."
         }
       }
     },
     "Scene": {
-      "description": "Represent a scene. Scenes can call fulfillment, add prompts, and collect slot\nvalues from the user. Scenes are triggered by events or intents and can\ntrigger events and match intents to transition to other scenes.",
+      "description": "Represent a scene. Scenes can call fulfillment, add prompts, and collect slot values from the user. Scenes are triggered by events or intents and can trigger events and match intents to transition to other scenes.",
       "type": "object",
       "properties": {
         "name": {
@@ -102,7 +102,7 @@
           ]
         },
         "slots": {
-          "description": "The slots associated with the current scene. Handler responses cannot\nreturn slots which were not sent in the request.",
+          "description": "The slots associated with the current scene. Handler responses cannot return slots which were not sent in the request.",
           "type": "object"
         },
         "next": {
@@ -135,14 +135,14 @@
           ]
         },
         "value": {
-          "description": "The value of the slot. Changing this value in the response, will\nmodify the value in slot filling."
+          "description": "The value of the slot. Changing this value in the response, will modify the value in slot filling."
         },
         "updated": {
-          "description": "Indicates if the slot value was collected on the last turn.\nThis field is read-only.",
+          "description": "Indicates if the slot value was collected on the last turn. This field is read-only.",
           "type": "boolean"
         },
         "prompt": {
-          "description": "Optional. This prompt is sent to the user when needed to fill a required\nslot. This prompt overrides the existing prompt defined in the console.\nThis field is not included in the webhook request.",
+          "description": "Optional. This prompt is sent to the user when needed to fill a required slot. This prompt overrides the existing prompt defined in the console. This field is not included in the webhook request.",
           "$ref": "#/definitions/Prompt"
         }
       }
@@ -152,7 +152,7 @@
       "type": "object",
       "properties": {
         "override": {
-          "description": "Optional. Mode for how this messages should be merged with previously\ndefined messages.\n\"true\" clears all previously defined messages (first and last\nsimple, content, suggestions link and canvas) and adds messages defined in\nthis prompt.\n\"false\" adds messages defined in this prompt to messages defined in\nprevious responses. Leaving this field to \"false\" also enables\nappending to some fields inside Simple prompts, the Suggestions prompt,\nand the Canvas prompt (part of the Content prompt). The Content and Link\nmessages are always overwritten if defined in the prompt. Default\nvalue is \"false\".",
+          "description": "Optional. Mode for how this messages should be merged with previously defined messages. \"true\" clears all previously defined messages (first and last simple, content, suggestions link and canvas) and adds messages defined in this prompt. \"false\" adds messages defined in this prompt to messages defined in previous responses. Leaving this field to \"false\" also enables appending to some fields inside Simple prompts, the Suggestions prompt, and the Canvas prompt (part of the Content prompt). The Content and Link messages are always overwritten if defined in the prompt. Default value is \"false\".",
           "type": "boolean"
         },
         "firstSimple": {
@@ -168,14 +168,14 @@
           "$ref": "#/definitions/Simple"
         },
         "suggestions": {
-          "description": "Optional. Suggestions to be displayed to the user which will always appear\nat the end of the response.\nIf the \"override\" field in the containing prompt is \"false\", the titles\ndefined in this field will be added to titles defined in any previously\ndefined suggestions prompts and duplicate values will be removed.",
+          "description": "Optional. Suggestions to be displayed to the user which will always appear at the end of the response. If the \"override\" field in the containing prompt is \"false\", the titles defined in this field will be added to titles defined in any previously defined suggestions prompts and duplicate values will be removed.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Suggestion"
           }
         },
         "link": {
-          "description": "Optional. An additional suggestion chip that can link out to the associated app\nor site.\nThe chip will be rendered with the title \"Open <name>\". Max 20 chars.",
+          "description": "Optional. An additional suggestion chip that can link out to the associated app or site. The chip will be rendered with the title \"Open <name>\". Max 20 chars.",
           "$ref": "#/definitions/Link"
         },
         "canvas": {
@@ -183,7 +183,7 @@
           "$ref": "#/definitions/Canvas"
         },
         "orderUpdate": {
-          "description": "Optional\nAction responds with an OrderUpdate after receiving the order during the\ntransactions flow. On receipt of this, Google records this update to the\norder, and if successful, displays a receipt card along with the TTS sent\non display devices.",
+          "description": "Optional Action responds with an OrderUpdate after receiving the order during the transactions flow. On receipt of this, Google records this update to the order, and if successful, displays a receipt card along with the TTS sent on display devices.",
           "$ref": "#/definitions/OrderUpdate"
         }
       }
@@ -193,11 +193,11 @@
       "type": "object",
       "properties": {
         "speech": {
-          "description": "Optional. Represents the speech to be spoken to the user. Can be SSML or\ntext to speech.\nIf the \"override\" field in the containing prompt is \"true\", the speech\ndefined in this field replaces the previous Simple prompt's speech.",
+          "description": "Optional. Represents the speech to be spoken to the user. Can be SSML or text to speech. If the \"override\" field in the containing prompt is \"true\", the speech defined in this field replaces the previous Simple prompt's speech.",
           "type": "string"
         },
         "text": {
-          "description": "Optional text to display in the chat bubble. If not given, a display\nrendering of the speech field above will be used. Limited to 640\nchars.\nIf the \"override\" field in the containing prompt is \"true\", the text\ndefined in this field replaces to the previous Simple prompt's text.",
+          "description": "Optional text to display in the chat bubble. If not given, a display rendering of the speech field above will be used. Limited to 640 chars. If the \"override\" field in the containing prompt is \"true\", the text defined in this field replaces to the previous Simple prompt's text.",
           "type": "string"
         }
       }
@@ -236,7 +236,7 @@
       "type": "object",
       "properties": {
         "title": {
-          "description": "Overall title of the card.\nOptional.",
+          "description": "Overall title of the card. Optional.",
           "type": "string"
         },
         "subtitle": {
@@ -244,11 +244,11 @@
           "type": "string"
         },
         "text": {
-          "description": "Body text of the card.\nSupports a limited set of markdown syntax for formatting.\nRequired, unless image is present.",
+          "description": "Body text of the card. Supports a limited set of markdown syntax for formatting. Required, unless image is present.",
           "type": "string"
         },
         "image": {
-          "description": "A hero image for the card. The height is fixed to 192dp.\nOptional.",
+          "description": "A hero image for the card. The height is fixed to 192dp. Optional.",
           "$ref": "#/definitions/Image"
         },
         "imageFill": {
@@ -262,7 +262,7 @@
           ]
         },
         "button": {
-          "description": "Button.\nOptional.",
+          "description": "Button. Optional.",
           "$ref": "#/definitions/Link"
         }
       }
@@ -272,20 +272,20 @@
       "type": "object",
       "properties": {
         "url": {
-          "description": "The source url of the image. Images can be JPG, PNG and GIF (animated and\nnon-animated). For example,`https://www.agentx.com/logo.png`. Required.",
+          "description": "The source url of the image. Images can be JPG, PNG and GIF (animated and non-animated). For example,`https://www.agentx.com/logo.png`. Required.",
           "type": "string"
         },
         "alt": {
-          "description": "A text description of the image to be used for accessibility, e.g. screen\nreaders.\nRequired.",
+          "description": "A text description of the image to be used for accessibility, e.g. screen readers. Required.",
           "type": "string"
         },
         "height": {
-          "description": "The height of the image in pixels.\nOptional.",
+          "description": "The height of the image in pixels. Optional.",
           "type": "integer",
           "format": "int32"
         },
         "width": {
-          "description": "The width of the image in pixels.\nOptional.",
+          "description": "The width of the image in pixels. Optional.",
           "type": "integer",
           "format": "int32"
         }
@@ -308,7 +308,7 @@
       "type": "object",
       "properties": {
         "url": {
-          "description": "The url field which could be any of:\n- http/https urls for opening an App-linked App or a webpage",
+          "description": "The url field which could be any of: - http/https urls for opening an App-linked App or a webpage",
           "type": "string"
         },
         "hint": {
@@ -345,7 +345,7 @@
           }
         },
         "rows": {
-          "description": "Row data of the table. The first 3 rows are guaranteed to be shown but\nothers might be cut on certain surfaces. Please test with the simulator to\nsee which rows will be shown for a given surface. On surfaces that support\nthe WEB_BROWSER capability, you can point the user to\na web page with more data.",
+          "description": "Row data of the table. The first 3 rows are guaranteed to be shown but others might be cut on certain surfaces. Please test with the simulator to see which rows will be shown for a given surface. On surfaces that support the WEB_BROWSER capability, you can point the user to a web page with more data.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/TableRow"
@@ -365,7 +365,7 @@
           "type": "string"
         },
         "align": {
-          "description": "Horizontal alignment of content w.r.t column. If unspecified, content\nwill be aligned to the leading edge.",
+          "description": "Horizontal alignment of content w.r.t column. If unspecified, content will be aligned to the leading edge.",
           "type": "string",
           "enum": [
             "UNSPECIFIED",
@@ -381,7 +381,7 @@
       "type": "object",
       "properties": {
         "cells": {
-          "description": "Cells in this row. The first 3 cells are guaranteed to be shown but\nothers might be cut on certain surfaces. Please test with the simulator\nto see which cells will be shown for a given surface.",
+          "description": "Cells in this row. The first 3 cells are guaranteed to be shown but others might be cut on certain surfaces. Please test with the simulator to see which cells will be shown for a given surface.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/TableCell"
@@ -404,7 +404,7 @@
       }
     },
     "Media": {
-      "description": "Represents one media object.\nContains information about the media, such as name, description, url, etc.",
+      "description": "Represents one media object. Contains information about the media, such as name, description, url, etc.",
       "type": "object",
       "properties": {
         "mediaType": {
@@ -421,7 +421,7 @@
           "format": "google-duration"
         },
         "optionalMediaControls": {
-          "description": "Optional media control types this media response session can support.\nIf set, request will be made to 3p when a certain media event happens.\nIf not set, 3p must still handle two default control type, FINISHED and\nFAILED.",
+          "description": "Optional media control types this media response session can support. If set, request will be made to 3p when a certain media event happens. If not set, 3p must still handle two default control type, FINISHED and FAILED.",
           "type": "array",
           "items": {
             "type": "string",
@@ -471,7 +471,7 @@
           "$ref": "#/definitions/Image"
         },
         "icon": {
-          "description": "A small image icon displayed on the right from the title.\nIt's resized to 36x36 dp.",
+          "description": "A small image icon displayed on the right from the title. It's resized to 36x36 dp.",
           "$ref": "#/definitions/Image"
         }
       }
@@ -512,7 +512,7 @@
       "type": "object",
       "properties": {
         "key": {
-          "description": "Required. The NLU key that matches the entry key name in the associated\nType.",
+          "description": "Required. The NLU key that matches the entry key name in the associated Type.",
           "type": "string"
         }
       }
@@ -543,7 +543,7 @@
       "type": "object",
       "properties": {
         "key": {
-          "description": "Required. The NLU key that matches the entry key name in the associated\nType.",
+          "description": "Required. The NLU key that matches the entry key name in the associated Type.",
           "type": "string"
         }
       }
@@ -552,7 +552,7 @@
       "type": "object",
       "properties": {
         "title": {
-          "description": "Required. The text shown in the suggestion chip. When tapped, this text will be\nposted back to the conversation verbatim as if the user had typed it.\nEach title must be unique among the set of suggestion chips.\nMax 25 chars",
+          "description": "Required. The text shown in the suggestion chip. When tapped, this text will be posted back to the conversation verbatim as if the user had typed it. Each title must be unique among the set of suggestion chips. Max 25 chars",
           "type": "string"
         }
       }
@@ -580,7 +580,7 @@
       "type": "object",
       "properties": {
         "type": {
-          "description": "Deprecated: Use OrderUpdate.update_mask instead.\nIf type = SNAPSHOT, OrderUpdate.order should be the entire order.\nIf type = ORDER_STATUS, this is the order level status change. Only\norder.last_update_time and this vertical status are picked up.\nNote: type.ORDER_STATUS only supports PurcahaseOrderExtension status\nupdates and there is no plan to extend this support. Instead, we recommend\nusing update_mask as it is more generic, extensible and can be used for all\nverticals.",
+          "description": "Deprecated: Use OrderUpdate.update_mask instead. If type = SNAPSHOT, OrderUpdate.order should be the entire order. If type = ORDER_STATUS, this is the order level status change. Only order.last_update_time and this vertical status are picked up. Note: type.ORDER_STATUS only supports PurcahaseOrderExtension status updates and there is no plan to extend this support. Instead, we recommend using update_mask as it is more generic, extensible and can be used for all verticals.",
           "type": "string",
           "enum": [
             "TYPE_UNSPECIFIED",
@@ -592,12 +592,12 @@
           "$ref": "#/definitions/Order"
         },
         "updateMask": {
-          "description": "Note: There are following consideration/recommendations for following\nspecial fields:\n1. order.last_update_time will always be updated as part of the update\nrequest.\n2. order.create_time, order.google_order_id and order.merchant_order_id\nwill be ignored if provided as part of the update_mask.",
+          "description": "Note: There are following consideration/recommendations for following special fields: 1. order.last_update_time will always be updated as part of the update request. 2. order.create_time, order.google_order_id and order.merchant_order_id will be ignored if provided as part of the update_mask.",
           "type": "string",
           "format": "google-fieldmask"
         },
         "userNotification": {
-          "description": "If specified, displays a notification to the user with the specified\ntitle and text. Specifying a notification is a suggestion to\nnotify and is not guaranteed to result in a notification.",
+          "description": "If specified, displays a notification to the user with the specified title and text. Specifying a notification is a suggestion to notify and is not guaranteed to result in a notification.",
           "$ref": "#/definitions/UserNotification"
         },
         "reason": {
@@ -607,7 +607,7 @@
       }
     },
     "Order": {
-      "description": "Order entity.\nNote:\n1. All strings at all levels must be less than 1000 chars unless otherwise\nspecified.\n2. All repeated fields at all levels must be less than 50 in count unless\notherwise specified.\n3. All timestamps at all levels, if specified, must be valid timestamps.",
+      "description": "Order entity. Note: 1. All strings at all levels must be less than 1000 chars unless otherwise specified. 2. All repeated fields at all levels must be less than 50 in count unless otherwise specified. 3. All timestamps at all levels, if specified, must be valid timestamps.",
       "type": "object",
       "properties": {
         "googleOrderId": {
@@ -615,15 +615,15 @@
           "type": "string"
         },
         "merchantOrderId": {
-          "description": "Required: Merchant assigned internal order id. This id must be unique, and\nis required for subsequent order update operations. This id may be set to\nthe provided google_order_id, or any other unique value. Note that the id\npresented to users is the user_visible_order_id, which may be a different,\nmore user-friendly value.\nMax allowed length is 128 chars.",
+          "description": "Required: Merchant assigned internal order id. This id must be unique, and is required for subsequent order update operations. This id may be set to the provided google_order_id, or any other unique value. Note that the id presented to users is the user_visible_order_id, which may be a different, more user-friendly value. Max allowed length is 128 chars.",
           "type": "string"
         },
         "userVisibleOrderId": {
-          "description": "The user facing id referencing to current order. This id should be\nconsistent with the id displayed for this order in other contexts,\nincluding websites, apps and email.",
+          "description": "The user facing id referencing to current order. This id should be consistent with the id displayed for this order in other contexts, including websites, apps and email.",
           "type": "string"
         },
         "userVisibleStateLabel": {
-          "description": "Deprecated: Use OrderExtensions status instead.\nUser visible label for the state of this order.",
+          "description": "Deprecated: Use OrderExtensions status instead. User visible label for the state of this order.",
           "type": "string"
         },
         "buyerInfo": {
@@ -640,12 +640,12 @@
           "format": "google-datetime"
         },
         "lastUpdateTime": {
-          "description": "Date and time the order was last updated.\nRequired for OrderUpdate.",
+          "description": "Date and time the order was last updated. Required for OrderUpdate.",
           "type": "string",
           "format": "google-datetime"
         },
         "transactionMerchant": {
-          "description": "Merchant that facilitated the checkout. This could be different from\na line item level provider. Example: Expedia Order with line item from ANA.",
+          "description": "Merchant that facilitated the checkout. This could be different from a line item level provider. Example: Expedia Order with line item from ANA.",
           "$ref": "#/definitions/Merchant"
         },
         "contents": {
@@ -701,13 +701,13 @@
           "$ref": "#/definitions/TicketTicketOrderExtension"
         },
         "vertical": {
-          "description": "Deprecated: Use verticals instead.\nThese properties will apply to all line items, unless overridden in\nsome line item. This vertical must match the line item level vertical type.\nPossible values:\ngoogle.actions.orders.v3.verticals.purchase.PurchaseOrderExtension\ngoogle.actions.orders.v3.verticals.ticket.TicketOrderExtension",
+          "description": "Deprecated: Use verticals instead. These properties will apply to all line items, unless overridden in some line item. This vertical must match the line item level vertical type. Possible values: google.actions.orders.v3.verticals.purchase.PurchaseOrderExtension google.actions.orders.v3.verticals.ticket.TicketOrderExtension",
           "type": "object"
         }
       }
     },
     "UserInfo": {
-      "description": "Information about user. This is used to represent information of the user\nassociated with an order.",
+      "description": "Information about user. This is used to represent information of the user associated with an order.",
       "type": "object",
       "properties": {
         "email": {
@@ -740,15 +740,15 @@
       "type": "object",
       "properties": {
         "e164PhoneNumber": {
-          "description": "Phone number in E.164 format, as defined in International\nTelecommunication Union (ITU) Recommendation E.164.\nwiki link: https://en.wikipedia.org/wiki/E.164",
+          "description": "Phone number in E.164 format, as defined in International Telecommunication Union (ITU) Recommendation E.164. wiki link: https://en.wikipedia.org/wiki/E.164",
           "type": "string"
         },
         "extension": {
-          "description": "Extension is not standardized in ITU recommendations, except for being\ndefined as a series of numbers with a maximum length of 40 digits. It is\ndefined as a string here to accommodate for the possible use of a leading\nzero in the extension (organizations have complete freedom to do so, as\nthere is no standard defined). Other than digits, some other dialling\ncharacters such as \",\" (indicating a wait) may be stored here.\nFor example, in xxx-xxx-xxxx ext. 123, \"123\" is the extension.",
+          "description": "Extension is not standardized in ITU recommendations, except for being defined as a series of numbers with a maximum length of 40 digits. It is defined as a string here to accommodate for the possible use of a leading zero in the extension (organizations have complete freedom to do so, as there is no standard defined). Other than digits, some other dialling characters such as \",\" (indicating a wait) may be stored here. For example, in xxx-xxx-xxxx ext. 123, \"123\" is the extension.",
           "type": "string"
         },
         "preferredDomesticCarrierCode": {
-          "description": "The carrier selection code that is preferred when calling this phone number\ndomestically. This also includes codes that need to be dialed in some\ncountries when calling from landlines to mobiles or vice versa. For\nexample, in Columbia, a \"3\" needs to be dialed before the phone number\nitself when calling from a mobile phone to a domestic landline phone and\nvice versa. https://en.wikipedia.org/wiki/Telephone_numbers_in_Colombia\nhttps://en.wikipedia.org/wiki/Brazilian_Carrier_Selection_Code\n\nNote this is the \"preferred\" code, which means other codes may work as\nwell.",
+          "description": "The carrier selection code that is preferred when calling this phone number domestically. This also includes codes that need to be dialed in some countries when calling from landlines to mobiles or vice versa. For example, in Columbia, a \"3\" needs to be dialed before the phone number itself when calling from a mobile phone to a domestic landline phone and vice versa. https://en.wikipedia.org/wiki/Telephone_numbers_in_Colombia https://en.wikipedia.org/wiki/Brazilian_Carrier_Selection_Code Note this is the \"preferred\" code, which means other codes may work as well.",
           "type": "string"
         }
       }
@@ -758,20 +758,20 @@
       "type": "object",
       "properties": {
         "url": {
-          "description": "The source url of the image. Images can be JPG, PNG and GIF (animated and\nnon-animated). For example,`https://www.agentx.com/logo.png`. Required.",
+          "description": "The source url of the image. Images can be JPG, PNG and GIF (animated and non-animated). For example,`https://www.agentx.com/logo.png`. Required.",
           "type": "string"
         },
         "accessibilityText": {
-          "description": "A text description of the image to be used for accessibility, e.g. screen\nreaders.\nRequired.",
+          "description": "A text description of the image to be used for accessibility, e.g. screen readers. Required.",
           "type": "string"
         },
         "height": {
-          "description": "The height of the image in pixels.\nOptional.",
+          "description": "The height of the image in pixels. Optional.",
           "type": "integer",
           "format": "int32"
         },
         "width": {
-          "description": "The width of the image in pixels.\nOptional.",
+          "description": "The width of the image in pixels. Optional.",
           "type": "integer",
           "format": "int32"
         }
@@ -811,23 +811,23 @@
       "type": "object",
       "properties": {
         "coordinates": {
-          "description": "Geo coordinates.\nRequires the DEVICE_PRECISE_LOCATION permission.",
+          "description": "Geo coordinates. Requires the DEVICE_PRECISE_LOCATION permission.",
           "$ref": "#/definitions/LatLng"
         },
         "formattedAddress": {
-          "description": "Display address, e.g., \"1600 Amphitheatre Pkwy, Mountain View, CA 94043\".\nRequires the DEVICE_PRECISE_LOCATION permission.",
+          "description": "Display address, e.g., \"1600 Amphitheatre Pkwy, Mountain View, CA 94043\". Requires the DEVICE_PRECISE_LOCATION permission.",
           "type": "string"
         },
         "zipCode": {
-          "description": "Zip code.\nRequires the DEVICE_PRECISE_LOCATION or\nDEVICE_COARSE_LOCATION permission.",
+          "description": "Zip code. Requires the DEVICE_PRECISE_LOCATION or DEVICE_COARSE_LOCATION permission.",
           "type": "string"
         },
         "city": {
-          "description": "City.\nRequires the DEVICE_PRECISE_LOCATION or\nDEVICE_COARSE_LOCATION permission.",
+          "description": "City. Requires the DEVICE_PRECISE_LOCATION or DEVICE_COARSE_LOCATION permission.",
           "type": "string"
         },
         "postalAddress": {
-          "description": "Postal address.\nRequires the DEVICE_PRECISE_LOCATION or\nDEVICE_COARSE_LOCATION permission.",
+          "description": "Postal address. Requires the DEVICE_PRECISE_LOCATION or DEVICE_COARSE_LOCATION permission.",
           "$ref": "#/definitions/PostalAddress"
         },
         "name": {
@@ -835,7 +835,7 @@
           "type": "string"
         },
         "phoneNumber": {
-          "description": "Phone number of the location, e.g. contact number of business location or\nphone number for delivery location.",
+          "description": "Phone number of the location, e.g. contact number of business location or phone number for delivery location.",
           "type": "string"
         },
         "notes": {
@@ -843,13 +843,13 @@
           "type": "string"
         },
         "placeId": {
-          "description": "place_id is used with Places API to fetch details of a place.\nSee https://developers.google.com/places/web-service/place-id",
+          "description": "place_id is used with Places API to fetch details of a place. See https://developers.google.com/places/web-service/place-id",
           "type": "string"
         }
       }
     },
     "LatLng": {
-      "description": "An object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude. Unless\nspecified otherwise, this must conform to the\n<a href=\"http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf\">WGS84\nstandard</a>. Values must be within normalized ranges.",
+      "description": "An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges.",
       "type": "object",
       "properties": {
         "latitude": {
@@ -865,51 +865,51 @@
       }
     },
     "PostalAddress": {
-      "description": "Represents a postal address, e.g. for postal delivery or payments addresses.\nGiven a postal address, a postal service can deliver items to a premise, P.O.\nBox or similar.\nIt is not intended to model geographical locations (roads, towns,\nmountains).\n\nIn typical usage an address would be created via user input or from importing\nexisting data, depending on the type of process.\n\nAdvice on address input / editing:\n - Use an i18n-ready address widget such as\n   https://github.com/google/libaddressinput)\n- Users should not be presented with UI elements for input or editing of\n  fields outside countries where that field is used.\n\nFor more guidance on how to use this schema, please see:\nhttps://support.google.com/business/answer/6397478",
+      "description": "Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an i18n-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478",
       "type": "object",
       "properties": {
         "revision": {
-          "description": "The schema revision of the `PostalAddress`. This must be set to 0, which is\nthe latest revision.\n\nAll new revisions **must** be backward compatible with old revisions.",
+          "description": "The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.",
           "type": "integer",
           "format": "int32"
         },
         "regionCode": {
-          "description": "Required. CLDR region code of the country/region of the address. This\nis never inferred and it is up to the user to ensure the value is\ncorrect. See http://cldr.unicode.org/ and\nhttp://www.unicode.org/cldr/charts/30/supplemental/territory_information.html\nfor details. Example: \"CH\" for Switzerland.",
+          "description": "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See http://cldr.unicode.org/ and http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland.",
           "type": "string"
         },
         "languageCode": {
-          "description": "Optional. BCP-47 language code of the contents of this address (if\nknown). This is often the UI language of the input form or is expected\nto match one of the languages used in the address' country/region, or their\ntransliterated equivalents.\nThis can affect formatting in certain countries, but is not critical\nto the correctness of the data and will never affect any validation or\nother non-formatting related operations.\n\nIf this value is not known, it should be omitted (rather than specifying a\npossibly incorrect default).\n\nExamples: \"zh-Hant\", \"ja\", \"ja-Latn\", \"en\".",
+          "description": "Optional. BCP-47 language code of the contents of this address (if known). This is often the UI language of the input form or is expected to match one of the languages used in the address' country/region, or their transliterated equivalents. This can affect formatting in certain countries, but is not critical to the correctness of the data and will never affect any validation or other non-formatting related operations. If this value is not known, it should be omitted (rather than specifying a possibly incorrect default). Examples: \"zh-Hant\", \"ja\", \"ja-Latn\", \"en\".",
           "type": "string"
         },
         "postalCode": {
-          "description": "Optional. Postal code of the address. Not all countries use or require\npostal codes to be present, but where they are used, they may trigger\nadditional validation with other parts of the address (e.g. state/zip\nvalidation in the U.S.A.).",
+          "description": "Optional. Postal code of the address. Not all countries use or require postal codes to be present, but where they are used, they may trigger additional validation with other parts of the address (e.g. state/zip validation in the U.S.A.).",
           "type": "string"
         },
         "sortingCode": {
-          "description": "Optional. Additional, country-specific, sorting code. This is not used\nin most regions. Where it is used, the value is either a string like\n\"CEDEX\", optionally followed by a number (e.g. \"CEDEX 7\"), or just a number\nalone, representing the \"sector code\" (Jamaica), \"delivery area indicator\"\n(Malawi) or \"post office indicator\" (e.g. Côte d'Ivoire).",
+          "description": "Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like \"CEDEX\", optionally followed by a number (e.g. \"CEDEX 7\"), or just a number alone, representing the \"sector code\" (Jamaica), \"delivery area indicator\" (Malawi) or \"post office indicator\" (e.g. Côte d'Ivoire).",
           "type": "string"
         },
         "administrativeArea": {
-          "description": "Optional. Highest administrative subdivision which is used for postal\naddresses of a country or region.\nFor example, this can be a state, a province, an oblast, or a prefecture.\nSpecifically, for Spain this is the province and not the autonomous\ncommunity (e.g. \"Barcelona\" and not \"Catalonia\").\nMany countries don't use an administrative area in postal addresses. E.g.\nin Switzerland this should be left unpopulated.",
+          "description": "Optional. Highest administrative subdivision which is used for postal addresses of a country or region. For example, this can be a state, a province, an oblast, or a prefecture. Specifically, for Spain this is the province and not the autonomous community (e.g. \"Barcelona\" and not \"Catalonia\"). Many countries don't use an administrative area in postal addresses. E.g. in Switzerland this should be left unpopulated.",
           "type": "string"
         },
         "locality": {
-          "description": "Optional. Generally refers to the city/town portion of the address.\nExamples: US city, IT comune, UK post town.\nIn regions of the world where localities are not well defined or do not fit\ninto this structure well, leave locality empty and use address_lines.",
+          "description": "Optional. Generally refers to the city/town portion of the address. Examples: US city, IT comune, UK post town. In regions of the world where localities are not well defined or do not fit into this structure well, leave locality empty and use address_lines.",
           "type": "string"
         },
         "sublocality": {
-          "description": "Optional. Sublocality of the address.\nFor example, this can be neighborhoods, boroughs, districts.",
+          "description": "Optional. Sublocality of the address. For example, this can be neighborhoods, boroughs, districts.",
           "type": "string"
         },
         "addressLines": {
-          "description": "Unstructured address lines describing the lower levels of an address.\n\nBecause values in address_lines do not have type information and may\nsometimes contain multiple values in a single field (e.g.\n\"Austin, TX\"), it is important that the line order is clear. The order of\naddress lines should be \"envelope order\" for the country/region of the\naddress. In places where this can vary (e.g. Japan), address_language is\nused to make it explicit (e.g. \"ja\" for large-to-small ordering and\n\"ja-Latn\" or \"en\" for small-to-large). This way, the most specific line of\nan address can be selected based on the language.\n\nThe minimum permitted structural representation of an address consists\nof a region_code with all remaining information placed in the\naddress_lines. It would be possible to format such an address very\napproximately without geocoding, but no semantic reasoning could be\nmade about any of the address components until it was at least\npartially resolved.\n\nCreating an address only containing a region_code and address_lines, and\nthen geocoding is the recommended way to handle completely unstructured\naddresses (as opposed to guessing which parts of the address should be\nlocalities or administrative areas).",
+          "description": "Unstructured address lines describing the lower levels of an address. Because values in address_lines do not have type information and may sometimes contain multiple values in a single field (e.g. \"Austin, TX\"), it is important that the line order is clear. The order of address lines should be \"envelope order\" for the country/region of the address. In places where this can vary (e.g. Japan), address_language is used to make it explicit (e.g. \"ja\" for large-to-small ordering and \"ja-Latn\" or \"en\" for small-to-large). This way, the most specific line of an address can be selected based on the language. The minimum permitted structural representation of an address consists of a region_code with all remaining information placed in the address_lines. It would be possible to format such an address very approximately without geocoding, but no semantic reasoning could be made about any of the address components until it was at least partially resolved. Creating an address only containing a region_code and address_lines, and then geocoding is the recommended way to handle completely unstructured addresses (as opposed to guessing which parts of the address should be localities or administrative areas).",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "recipients": {
-          "description": "Optional. The recipient at the address.\nThis field may, under certain circumstances, contain multiline information.\nFor example, it might contain \"care of\" information.",
+          "description": "Optional. The recipient at the address. This field may, under certain circumstances, contain multiline information. For example, it might contain \"care of\" information.",
           "type": "array",
           "items": {
             "type": "string"
@@ -926,7 +926,7 @@
       "type": "object",
       "properties": {
         "lineItems": {
-          "description": "List of order line items.\nAt least 1 line_item is required and at-most 50 is allowed.\nAll line items must belong to same vertical.",
+          "description": "List of order line items. At least 1 line_item is required and at-most 50 is allowed. All line items must belong to same vertical.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/LineItem"
@@ -935,23 +935,23 @@
       }
     },
     "LineItem": {
-      "description": "One line item contains one vertical. An order or cart can have multiple\nline items of same vertical. Sub-line items/add-ons etc should be defined in\nvertical protos depending on their use cases.\nNote:\n1. All strings at all levels must be less than 1000 chars unless otherwise\nspecified.\n2. All repeated fields at all levels must be less than 50 in count unless\notherwise specified.\n3. All timestamps at all levels, if specified, must be valid timestamps.",
+      "description": "One line item contains one vertical. An order or cart can have multiple line items of same vertical. Sub-line items/add-ons etc should be defined in vertical protos depending on their use cases. Note: 1. All strings at all levels must be less than 1000 chars unless otherwise specified. 2. All repeated fields at all levels must be less than 50 in count unless otherwise specified. 3. All timestamps at all levels, if specified, must be valid timestamps.",
       "type": "object",
       "properties": {
         "id": {
-          "description": "Required: Merchant assigned identifier for line item.\nUsed for identifying existing line item in applying partial updates.\nMax allowed length is 64 chars.",
+          "description": "Required: Merchant assigned identifier for line item. Used for identifying existing line item in applying partial updates. Max allowed length is 64 chars.",
           "type": "string"
         },
         "name": {
-          "description": "Name of line item as displayed on the receipt.\nMax allowed length is 100 chars.",
+          "description": "Name of line item as displayed on the receipt. Max allowed length is 100 chars.",
           "type": "string"
         },
         "userVisibleStateLabel": {
-          "description": "Deprecated. Use vertical level status instead. For example, for purchases,\nuse PurchaseOrderExtension.status.\nUser visible label for the state of this line item.",
+          "description": "Deprecated. Use vertical level status instead. For example, for purchases, use PurchaseOrderExtension.status. User visible label for the state of this line item.",
           "type": "string"
         },
         "provider": {
-          "description": "The provider of the particular line item, if different from the overall\norder. Example: Expedia Order with line item provider ANA.",
+          "description": "The provider of the particular line item, if different from the overall order. Example: Expedia Order with line item provider ANA.",
           "$ref": "#/definitions/Merchant"
         },
         "priceAttributes": {
@@ -969,7 +969,7 @@
           }
         },
         "recipients": {
-          "description": "Line item level customers, this could be different from Order level buyer.\nExample: User X made restaurant reservation under name of user Y.",
+          "description": "Line item level customers, this could be different from Order level buyer. Example: User X made restaurant reservation under name of user Y.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/UserInfo"
@@ -984,7 +984,7 @@
           "type": "string"
         },
         "notes": {
-          "description": "Additional notes applicable to this particular line item, for example\ncancellation policy.",
+          "description": "Additional notes applicable to this particular line item, for example cancellation policy.",
           "type": "array",
           "items": {
             "type": "string"
@@ -1006,7 +1006,7 @@
           "$ref": "#/definitions/ReservationReservationItemExtension"
         },
         "vertical": {
-          "description": "Deprecated: Use verticals instead.\nRequired: Semantic Contents of line item based on its type/vertical.\nEvery vertical should include its own fulfillment details.\nMust be either one of the following values:\ngoogle.actions.orders.v3.verticals.purchase.PurchaseItemExtension\ngoogle.actions.orders.v3.verticals.reservation.ReservationItemExtension google.actions.orders.v3.verticals.ticket.TicketItemExtension",
+          "description": "Deprecated: Use verticals instead. Required: Semantic Contents of line item based on its type/vertical. Every vertical should include its own fulfillment details. Must be either one of the following values: google.actions.orders.v3.verticals.purchase.PurchaseItemExtension google.actions.orders.v3.verticals.reservation.ReservationItemExtension google.actions.orders.v3.verticals.ticket.TicketItemExtension",
           "type": "object"
         }
       }
@@ -1031,7 +1031,7 @@
           ]
         },
         "name": {
-          "description": "Required: User displayed string of the price attribute. This is sent and\nlocalized by merchant.",
+          "description": "Required: User displayed string of the price attribute. This is sent and localized by merchant.",
           "type": "string"
         },
         "id": {
@@ -1052,7 +1052,7 @@
           "$ref": "#/definitions/Money"
         },
         "amountMillipercentage": {
-          "description": "The percentage spec, to 1/1000th of a percent.\nEg: 8.750% is represented as 8750, negative percentages represent\npercentage discounts.\nDeprecating this field. Can consider adding back when a solid usecase is\nrequired.",
+          "description": "The percentage spec, to 1/1000th of a percent. Eg: 8.750% is represented as 8750, negative percentages represent percentage discounts. Deprecating this field. Can consider adding back when a solid usecase is required.",
           "type": "integer",
           "format": "int32"
         },
@@ -1071,7 +1071,7 @@
           "type": "string"
         },
         "amountInMicros": {
-          "description": "Amount in micros.\nFor example, this field should be set as 1990000 for $1.99.",
+          "description": "Amount in micros. For example, this field should be set as 1990000 for $1.99.",
           "type": "string",
           "format": "int64"
         }
@@ -1101,7 +1101,7 @@
           ]
         },
         "title": {
-          "description": "Title or label of the action, displayed to the user.\nMax allowed length is 100 chars.",
+          "description": "Title or label of the action, displayed to the user. Max allowed length is 100 chars.",
           "type": "string"
         },
         "openUrlAction": {
@@ -1119,11 +1119,11 @@
       "type": "object",
       "properties": {
         "url": {
-          "description": "The url field which could be any of:\n- http/https urls for opening an App-linked App or a webpage",
+          "description": "The url field which could be any of: - http/https urls for opening an App-linked App or a webpage",
           "type": "string"
         },
         "androidApp": {
-          "description": "Information about the Android App if the URL is expected to be\nfulfilled by an Android App.",
+          "description": "Information about the Android App if the URL is expected to be fulfilled by an Android App.",
           "$ref": "#/definitions/V2DevicesAndroidApp"
         },
         "urlTypeHint": {
@@ -1141,7 +1141,7 @@
       "type": "object",
       "properties": {
         "packageName": {
-          "description": "Package name\nPackage name must be specified when specifing Android Fulfillment.",
+          "description": "Package name Package name must be specified when specifing Android Fulfillment.",
           "type": "string"
         },
         "versions": {
@@ -1154,7 +1154,7 @@
       }
     },
     "V2DevicesVersionFilter": {
-      "description": "VersionFilter should be included if specific version/s of the App are\nrequired.",
+      "description": "VersionFilter should be included if specific version/s of the App are required.",
       "type": "object",
       "properties": {
         "minVersion": {
@@ -1163,7 +1163,7 @@
           "format": "int32"
         },
         "maxVersion": {
-          "description": "Max version code, inclusive.\nThe range considered is [min_version:max_version].\nA null range implies any version.\nExamples:\nTo specify a single version use: [target_version:target_version].\nTo specify any version leave min_version and max_version unspecified.\nTo specify all versions until max_version, leave min_version unspecified.\nTo specify all versions from min_version, leave max_version unspecified.",
+          "description": "Max version code, inclusive. The range considered is [min_version:max_version]. A null range implies any version. Examples: To specify a single version use: [target_version:target_version]. To specify any version leave min_version and max_version unspecified. To specify all versions until max_version, leave min_version unspecified. To specify all versions from min_version, leave max_version unspecified.",
           "type": "integer",
           "format": "int32"
         }
@@ -1203,11 +1203,11 @@
       "type": "object",
       "properties": {
         "template": {
-          "description": "Text to display, containing placeholders like \"{0}\" and \"{1}\" for each\ntextlink that should be inserted. Example:\n\"WARNING: This product can expose you to chemicals which are known to the\nState of California to cause cancer. For more information go to {0}.\"\nThis disclosure text must not contain any promotional or ad-like content.",
+          "description": "Text to display, containing placeholders like \"{0}\" and \"{1}\" for each textlink that should be inserted. Example: \"WARNING: This product can expose you to chemicals which are known to the State of California to cause cancer. For more information go to {0}.\" This disclosure text must not contain any promotional or ad-like content.",
           "type": "string"
         },
         "textLinks": {
-          "description": "Text links that should be substituted into the template. The first one\nwill be substituted for \"{0}\" in the template string, and the second one\nfor \"{1}\", etc.",
+          "description": "Text links that should be substituted into the template. The first one will be substituted for \"{0}\" in the template string, and the second one for \"{1}\", etc.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/TextLink"
@@ -1243,7 +1243,7 @@
           ]
         },
         "initiallyExpanded": {
-          "description": "Whether the content of the disclosure should be initially expanded.\nBy default, it is initially collapsed.",
+          "description": "Whether the content of the disclosure should be initially expanded. By default, it is initially collapsed.",
           "type": "boolean"
         }
       }
@@ -1271,7 +1271,7 @@
           ]
         },
         "userVisibleStatusLabel": {
-          "description": "Required: User visible label/string for the status.\nMax allowed length is 50 chars.",
+          "description": "Required: User visible label/string for the status. Max allowed length is 50 chars.",
           "type": "string"
         },
         "type": {
@@ -1295,15 +1295,15 @@
           "format": "int32"
         },
         "unitMeasure": {
-          "description": "Unit measure.\nSpecifies the size of the item in chosen units. The size, together with\nthe active price is used to determine the unit price.",
+          "description": "Unit measure. Specifies the size of the item in chosen units. The size, together with the active price is used to determine the unit price.",
           "$ref": "#/definitions/PurchaseMerchantUnitMeasure"
         },
         "returnsInfo": {
-          "description": "Returns info for this line item. If unset, this line item\ninherits order level returns info.",
+          "description": "Returns info for this line item. If unset, this line item inherits order level returns info.",
           "$ref": "#/definitions/PurchasePurchaseReturnsInfo"
         },
         "fulfillmentInfo": {
-          "description": "Fulfillment info for this line item. If unset, this line item\ninherits order level fulfillment info.",
+          "description": "Fulfillment info for this line item. If unset, this line item inherits order level fulfillment info.",
           "$ref": "#/definitions/PurchasePurchaseFulfillmentInfo"
         },
         "itemOptions": {
@@ -1318,7 +1318,7 @@
           "$ref": "#/definitions/PurchaseProductDetails"
         },
         "extension": {
-          "description": "Any extra fields exchanged between merchant and google.\nNote: Use of this extension is highly discouraged. Based on the\nuse-case/circumstances, consider one of the following:\n1. Define fields in the PurchaseItemExtension if it could be used for other\nuse-cases (ie. generic capability/functionality).\n2. Use vertical_extension if it is specific to a custom, non-generic\nuse-case/feature.",
+          "description": "Any extra fields exchanged between merchant and google. Note: Use of this extension is highly discouraged. Based on the use-case/circumstances, consider one of the following: 1. Define fields in the PurchaseItemExtension if it could be used for other use-cases (ie. generic capability/functionality). 2. Use vertical_extension if it is specific to a custom, non-generic use-case/feature.",
           "type": "object"
         }
       }
@@ -1383,11 +1383,11 @@
           ]
         },
         "expectedFulfillmentTime": {
-          "description": "A window if a time-range is specified or ETA if single time specified.\nExpected delivery or pickup time.",
+          "description": "A window if a time-range is specified or ETA if single time specified. Expected delivery or pickup time.",
           "$ref": "#/definitions/Time"
         },
         "expectedPreparationTime": {
-          "description": "A window if a time-range is specified or ETA if single time specified.\nExpected time to prepare the food. Single-time preferred.",
+          "description": "A window if a time-range is specified or ETA if single time specified. Expected time to prepare the food. Single-time preferred.",
           "$ref": "#/definitions/Time"
         },
         "location": {
@@ -1412,27 +1412,27 @@
           "type": "string"
         },
         "storeCode": {
-          "description": "StoreCode of the location.\nExample: Walmart is the merchant and store_code is the walmart store\nwhere fulfillment happened.\nhttps://support.google.com/business/answer/3370250?ref_topic=4596653.",
+          "description": "StoreCode of the location. Example: Walmart is the merchant and store_code is the walmart store where fulfillment happened. https://support.google.com/business/answer/3370250?ref_topic=4596653.",
           "type": "string"
         },
         "pickupInfo": {
-          "description": "Additional information regarding how order would be picked. This field\nwould only be applicable when fulfillment type is PICKUP.",
+          "description": "Additional information regarding how order would be picked. This field would only be applicable when fulfillment type is PICKUP.",
           "$ref": "#/definitions/PurchasePickupInfo"
         }
       }
     },
     "Time": {
-      "description": "Time construct to represent time of an event to use when displaying an order\nto the user.",
+      "description": "Time construct to represent time of an event to use when displaying an order to the user.",
       "type": "object",
       "properties": {
         "timeIso8601": {
-          "description": "Represents an order-event time like reservation time, delivery time and so\non. Could be a duration (start & end time), just the date, date time etc.\nRefer https://en.wikipedia.org/wiki/ISO_8601 for all supported formats.",
+          "description": "Represents an order-event time like reservation time, delivery time and so on. Could be a duration (start & end time), just the date, date time etc. Refer https://en.wikipedia.org/wiki/ISO_8601 for all supported formats.",
           "type": "string"
         }
       }
     },
     "PurchasePickupInfo": {
-      "description": "Details about how an order is picked up. It includes details such as pickup\ntype and additional metadata attached with each type, if any.",
+      "description": "Details about how an order is picked up. It includes details such as pickup type and additional metadata attached with each type, if any.",
       "type": "object",
       "properties": {
         "pickupType": {
@@ -1445,7 +1445,7 @@
           ]
         },
         "curbsideInfo": {
-          "description": "Details specific to the curbside information. If pickup_type is not\n\"CURBSIDE\", this field would be ignored.",
+          "description": "Details specific to the curbside information. If pickup_type is not \"CURBSIDE\", this field would be ignored.",
           "$ref": "#/definitions/PurchaseCurbsideInfo"
         },
         "checkInInfo": {
@@ -1462,7 +1462,7 @@
       "type": "object",
       "properties": {
         "curbsideFulfillmentType": {
-          "description": "Partners need additional information to facilitate curbside pickup\norders. Depending upon what fulfillment type is chosen, corresponding\ndetails would be collected from the user.",
+          "description": "Partners need additional information to facilitate curbside pickup orders. Depending upon what fulfillment type is chosen, corresponding details would be collected from the user.",
           "type": "string",
           "enum": [
             "UNSPECIFIED",
@@ -1480,23 +1480,23 @@
       "type": "object",
       "properties": {
         "make": {
-          "description": "Vehicle make (e.g. \"Honda\").\nThis is displayed to the user and must be localized.\nRequired.",
+          "description": "Vehicle make (e.g. \"Honda\"). This is displayed to the user and must be localized. Required.",
           "type": "string"
         },
         "model": {
-          "description": "Vehicle model (e.g. \"Grom\").\nThis is displayed to the user and must be localized.\nRequired.",
+          "description": "Vehicle model (e.g. \"Grom\"). This is displayed to the user and must be localized. Required.",
           "type": "string"
         },
         "licensePlate": {
-          "description": "Vehicle license plate number (e.g. \"1ABC234\").\nRequired.",
+          "description": "Vehicle license plate number (e.g. \"1ABC234\"). Required.",
           "type": "string"
         },
         "colorName": {
-          "description": "Vehicle color name, eg. black\nOptional.",
+          "description": "Vehicle color name, eg. black Optional.",
           "type": "string"
         },
         "image": {
-          "description": "URL to a photo of the vehicle.\nThe photo will be displayed at approximately 256x256px.\nMust be a jpg or png.\nOptional.",
+          "description": "URL to a photo of the vehicle. The photo will be displayed at approximately 256x256px. Must be a jpg or png. Optional.",
           "$ref": "#/definitions/V2UiElementsImage"
         }
       }
@@ -1566,19 +1566,19 @@
           "type": "string"
         },
         "gtin": {
-          "description": "Global Trade Item Number of the product.\nUseful if offerId is not present in Merchant Center. Optional.",
+          "description": "Global Trade Item Number of the product. Useful if offerId is not present in Merchant Center. Optional.",
           "type": "string"
         },
         "plu": {
-          "description": "Price look-up codes, commonly called PLU codes, PLU numbers, PLUs,\nproduce codes, or produce labels, are a system of numbers that\nuniquely identify bulk produce sold in grocery stores and supermarkets.",
+          "description": "Price look-up codes, commonly called PLU codes, PLU numbers, PLUs, produce codes, or produce labels, are a system of numbers that uniquely identify bulk produce sold in grocery stores and supermarkets.",
           "type": "string"
         },
         "productType": {
-          "description": "Product category defined by the merchant.\nE.g. \"Home > Grocery > Dairy & Eggs > Milk > Whole Milk\"",
+          "description": "Product category defined by the merchant. E.g. \"Home > Grocery > Dairy & Eggs > Milk > Whole Milk\"",
           "type": "string"
         },
         "productAttributes": {
-          "description": "Merchant-provided details about the product,\ne.g. { \"allergen\": \"peanut\" }.\nUseful if offerId is not present in Merchant Center. Optional.",
+          "description": "Merchant-provided details about the product, e.g. { \"allergen\": \"peanut\" }. Useful if offerId is not present in Merchant Center. Optional.",
           "type": "object"
         }
       }
@@ -1601,11 +1601,11 @@
           ]
         },
         "userVisibleStatusLabel": {
-          "description": "Required: User visible label/string for the status.\nMax allowed length is 50 chars.",
+          "description": "Required: User visible label/string for the status. Max allowed length is 50 chars.",
           "type": "string"
         },
         "type": {
-          "description": "Type of reservation.\nMay be unset if none of the type options is applicable.",
+          "description": "Type of reservation. May be unset if none of the type options is applicable.",
           "type": "string",
           "enum": [
             "RESERVATION_TYPE_UNSPECIFIED",
@@ -1614,7 +1614,7 @@
           ]
         },
         "reservationTime": {
-          "description": "Time when the service/event is scheduled to occur.\nCan be a time range, a date, or an exact date time.",
+          "description": "Time when the service/event is scheduled to occur. Can be a time range, a date, or an exact date time.",
           "$ref": "#/definitions/Time"
         },
         "userAcceptableTimeRange": {
@@ -1631,7 +1631,7 @@
           "format": "int32"
         },
         "staffFacilitators": {
-          "description": "Staff facilitators who will be servicing the reservation.\nEx. The hairstylist.",
+          "description": "Staff facilitators who will be servicing the reservation. Ex. The hairstylist.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/ReservationStaffFacilitator"
@@ -1662,11 +1662,11 @@
       "type": "object",
       "properties": {
         "paymentResult": {
-          "description": "Payment result that's used by integrator for completing a transaction.\nThis field will be populated by Actions on Google if the checkout\nexperience is managed by Actions-on-Google.",
+          "description": "Payment result that's used by integrator for completing a transaction. This field will be populated by Actions on Google if the checkout experience is managed by Actions-on-Google.",
           "$ref": "#/definitions/PaymentResult"
         },
         "paymentInfo": {
-          "description": "Payment information regarding the order that's useful for user facing\ninteraction.",
+          "description": "Payment information regarding the order that's useful for user facing interaction.",
           "$ref": "#/definitions/PaymentInfo"
         }
       }
@@ -1676,7 +1676,7 @@
       "type": "object",
       "properties": {
         "googlePaymentData": {
-          "description": "Google provided payment method data.\nIf your payment processor is listed as Google supported payment processor\nhere: https://developers.google.com/pay/api/ Navigate to your payment\nprocessor through the link to find out more details.\nOtherwise, refer to following documentation for payload details.\nhttps://developers.google.com/pay/api/payment-data-cryptography",
+          "description": "Google provided payment method data. If your payment processor is listed as Google supported payment processor here: https://developers.google.com/pay/api/ Navigate to your payment processor through the link to find out more details. Otherwise, refer to following documentation for payload details. https://developers.google.com/pay/api/payment-data-cryptography",
           "type": "string"
         },
         "merchantPaymentMethodId": {
@@ -1686,7 +1686,7 @@
       }
     },
     "PaymentInfo": {
-      "description": "Payment information regarding the order being made.\nThis proto captures information that's useful for user facing interaction.",
+      "description": "Payment information regarding the order being made. This proto captures information that's useful for user facing interaction.",
       "type": "object",
       "properties": {
         "paymentMethodDisplayInfo": {
@@ -1694,7 +1694,7 @@
           "$ref": "#/definitions/PaymentMethodDisplayInfo"
         },
         "paymentMethodProvenance": {
-          "description": "Provenance of the payment method used for the transaction.\nUser may have registered the same payment method with both google and\nmerchant.",
+          "description": "Provenance of the payment method used for the transaction. User may have registered the same payment method with both google and merchant.",
           "type": "string",
           "enum": [
             "PAYMENT_METHOD_PROVENANCE_UNSPECIFIED",
@@ -1722,11 +1722,11 @@
           ]
         },
         "paymentMethodDisplayName": {
-          "description": "User visible name of the payment method. For example,\nVISA **** 1234\nChecking acct **** 5678",
+          "description": "User visible name of the payment method. For example, VISA **** 1234 Checking acct **** 5678",
           "type": "string"
         },
         "paymentMethodVoiceName": {
-          "description": "Payment method name to be spoken out to the user for voice-only\nassistant devices. For example,\n\"visa ending in one two three four\", or\n\"checking account ending in five six seven eight\".\nNote: This is the voice-optimized string to be used instead of the\npayment_method_display_name for voice-only assistant devices. If this\nstring is not set, payment_method_display_name will instead be spoken out\nto the user.",
+          "description": "Payment method name to be spoken out to the user for voice-only assistant devices. For example, \"visa ending in one two three four\", or \"checking account ending in five six seven eight\". Note: This is the voice-optimized string to be used instead of the payment_method_display_name for voice-only assistant devices. If this string is not set, payment_method_display_name will instead be spoken out to the user.",
           "type": "string"
         }
       }
@@ -1742,7 +1742,7 @@
       }
     },
     "PurchasePurchaseOrderExtension": {
-      "description": "Order extension for purchase vertical. These properties are applicable to\nall line items inside order, unless overridden in a line item.",
+      "description": "Order extension for purchase vertical. These properties are applicable to all line items inside order, unless overridden in a line item.",
       "type": "object",
       "properties": {
         "status": {
@@ -1764,7 +1764,7 @@
           ]
         },
         "userVisibleStatusLabel": {
-          "description": "User visible label/string for the status.\nMax allowed length is 50 chars.",
+          "description": "User visible label/string for the status. Max allowed length is 50 chars.",
           "type": "string"
         },
         "type": {
@@ -1803,7 +1803,7 @@
           }
         },
         "extension": {
-          "description": "Any extra fields exchanged between merchant and google.\nNote: Use of this extension is highly discouraged. Based on the\nuse-case/circumstances, consider one of the following:\n1. Define fields in the PurchaseOrderExtension if it could be used for\nother use-cases (ie. generic capability/functionality).\n2. Use vertical_extension if it is specific to a custom, non-generic\nuse-case/feature.",
+          "description": "Any extra fields exchanged between merchant and google. Note: Use of this extension is highly discouraged. Based on the use-case/circumstances, consider one of the following: 1. Define fields in the PurchaseOrderExtension if it could be used for other use-cases (ie. generic capability/functionality). 2. Use vertical_extension if it is specific to a custom, non-generic use-case/feature.",
           "type": "object"
         }
       }
@@ -1813,7 +1813,7 @@
       "type": "object",
       "properties": {
         "type": {
-          "description": "Required: This represents the granular reason why an order gets rejected by\nthe merchant.",
+          "description": "Required: This represents the granular reason why an order gets rejected by the merchant.",
           "type": "string",
           "enum": [
             "ERROR_TYPE_UNSPECIFIED",
@@ -1846,7 +1846,7 @@
           "type": "string"
         },
         "entityId": {
-          "description": "Entity Id that corresponds to the error. Example this can correspond to\nLineItemId / ItemOptionId.",
+          "description": "Entity Id that corresponds to the error. Example this can correspond to LineItemId / ItemOptionId.",
           "type": "string"
         },
         "updatedPrice": {
@@ -1885,7 +1885,7 @@
           ]
         },
         "name": {
-          "description": "Required: Name of the event. For example, if the event is a movie, this\nshould be the movie name.",
+          "description": "Required: Name of the event. For example, if the event is a movie, this should be the movie name.",
           "type": "string"
         },
         "description": {
@@ -1901,7 +1901,7 @@
           "$ref": "#/definitions/V2Location"
         },
         "eventCharacters": {
-          "description": "The characters related to this event. It can be directors or actors of a\nmovie event, or performers of a concert, etc.",
+          "description": "The characters related to this event. It can be directors or actors of a movie event, or performers of a concert, etc.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/TicketEventCharacter"
@@ -1916,7 +1916,7 @@
           "$ref": "#/definitions/Time"
         },
         "doorTime": {
-          "description": "Entry time, which might be different from the event start time. e.g. the\nevent starts at 9am, but entry time is 8:30am.",
+          "description": "Entry time, which might be different from the event start time. e.g. the event starts at 9am, but entry time is 8:30am.",
           "$ref": "#/definitions/Time"
         }
       }
@@ -1951,11 +1951,11 @@
       "type": "object",
       "properties": {
         "title": {
-          "description": "The title for the user notification.\nMax allowed length is 30 chars.",
+          "description": "The title for the user notification. Max allowed length is 30 chars.",
           "type": "string"
         },
         "text": {
-          "description": "The contents of the notification.\nMax allowed length is 100 chars.",
+          "description": "The contents of the notification. Max allowed length is 100 chars.",
           "type": "string"
         }
       }
@@ -1975,22 +1975,22 @@
       "type": "object",
       "properties": {
         "id": {
-          "description": "Required. Globally unique ID of the current conversation session.\nThis field is read-only.",
+          "description": "Required. Globally unique ID of the current conversation session. This field is read-only.",
           "type": "string"
         },
         "params": {
-          "description": "Required. List of all parameters collected from forms and intents during\nthe session. Key is the parameter name.\nParameters defined here will be merged\nwith parameters already defined in the session.\nParameters with a null value will be removed from the session.",
+          "description": "Required. List of all parameters collected from forms and intents during the session. Key is the parameter name. Parameters defined here will be merged with parameters already defined in the session. Parameters with a null value will be removed from the session.",
           "type": "object"
         },
         "typeOverrides": {
-          "description": "Optional. Types scoped to the session.\nSession type defines can supplement or replace existing types.\nType names must be unique.",
+          "description": "Optional. Types scoped to the session. Session type defines can supplement or replace existing types. Type names must be unique.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/TypeOverride"
           }
         },
         "languageCode": {
-          "description": "Language of the current conversation session. Follows IETF BCP-47 language\ncode http://www.rfc-editor.org/rfc/bcp/bcp47.txt.\nThis could be different from user locale if the action uses multi-language\nfeatures. For example, when handler_response.expected.language is set, it\nchanges the conversation language for all following turns, which will be\nreflected in this field.",
+          "description": "Language of the current conversation session. Follows IETF BCP-47 language code http://www.rfc-editor.org/rfc/bcp/bcp47.txt. This could be different from user locale if the action uses multi-language features. For example, when handler_response.expected.language_code is set, it changes the conversation language for all following turns, which will be reflected in this field.",
           "type": "string"
         }
       }
@@ -2035,7 +2035,7 @@
       "type": "object",
       "properties": {
         "name": {
-          "description": "Required. Name of the entry  (e.g. \"bicycle\"). The entry in this field\nmust be included in repeated synonyms field to be recogonized as a valid\ntype value.",
+          "description": "Required. Name of the entry (e.g. \"bicycle\"). The entry in this field must be included in repeated synonyms field to be recogonized as a valid type value.",
           "type": "string"
         },
         "synonyms": {
@@ -2055,7 +2055,7 @@
       "type": "object",
       "properties": {
         "title": {
-          "description": "Required. Title of the item. When tapped, this text will be\nposted back to the conversation verbatim as if the user had typed it.\nEach title must be unique among the set of collection items.",
+          "description": "Required. Title of the item. When tapped, this text will be posted back to the conversation verbatim as if the user had typed it. Each title must be unique among the set of collection items.",
           "type": "string"
         },
         "description": {
@@ -2067,11 +2067,11 @@
           "$ref": "#/definitions/Image"
         },
         "footer": {
-          "description": "Optional. Footer text for the browsing collection item, displayed below\nthe description. Single line of text, truncated with an ellipsis.",
+          "description": "Optional. Footer text for the browsing collection item, displayed below the description. Single line of text, truncated with an ellipsis.",
           "type": "string"
         },
         "openUrl": {
-          "description": "URL of document associated with browsing carousel item.\nRequired for browsing carousel.",
+          "description": "URL of document associated with browsing carousel item. Required for browsing carousel.",
           "$ref": "#/definitions/OpenUrl"
         }
       }
@@ -2081,7 +2081,7 @@
       "type": "object",
       "properties": {
         "locale": {
-          "description": "Primary locale setting of the user making the request. Follows IETF BCP-47\nlanguage code http://www.rfc-editor.org/rfc/bcp/bcp47.txt However, the\nscript subtag is not included.",
+          "description": "Primary locale setting of the user making the request. Follows IETF BCP-47 language code http://www.rfc-editor.org/rfc/bcp/bcp47.txt However, the script subtag is not included.",
           "type": "string"
         },
         "params": {
@@ -2107,7 +2107,7 @@
           ]
         },
         "lastSeenTime": {
-          "description": "The timestamp of the last interaction with this user.\nThis field will be omitted if the user has not interacted with the agent\nbefore.",
+          "description": "The timestamp of the last interaction with this user. This field will be omitted if the user has not interacted with the agent before.",
           "type": "string",
           "format": "google-datetime"
         },
@@ -2116,7 +2116,7 @@
           "$ref": "#/definitions/Engagement"
         },
         "packageEntitlements": {
-          "description": "User's entitlements related to the Android package associated with the\ncurrent action.",
+          "description": "User's entitlements related to the Android package associated with the current action.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/PackageEntitlements"
@@ -2125,18 +2125,18 @@
       }
     },
     "Engagement": {
-      "description": "Provides additional read-only information about what engagement mechanisms\nthe current user has registered for. For example, it can be useful to know\nwhat intents the user is already subscribed to in order to avoid asking them\nto subscribe to the same intent again. i.e. This information can be used to\nconditionally route to a scene to set up DailyUpdates or PushNotifications\nonly if the user has not subscribed already.",
+      "description": "Provides additional read-only information about what engagement mechanisms the current user has registered for. For example, it can be useful to know what intents the user is already subscribed to in order to avoid asking them to subscribe to the same intent again. i.e. This information can be used to conditionally route to a scene to set up DailyUpdates or PushNotifications only if the user has not subscribed already.",
       "type": "object",
       "properties": {
         "pushNotificationIntents": {
-          "description": "Contains a list of intents which the user has enabled push notification\nfor.",
+          "description": "Contains a list of intents which the user has enabled push notification for.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/IntentSubscription"
           }
         },
         "dailyUpdateIntents": {
-          "description": "Contains a list of intents which the user has enabled daily update\nfor.",
+          "description": "Contains a list of intents which the user has enabled daily update for.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/IntentSubscription"
@@ -2153,7 +2153,7 @@
           "type": "string"
         },
         "contentTitle": {
-          "description": "A short description of the subscription. It is used as the notification's\nlabel and when Assistant is requesting permission from the user.",
+          "description": "A short description of the subscription. It is used as the notification's label and when Assistant is requesting permission from the user.",
           "type": "string"
         }
       }
@@ -2180,7 +2180,7 @@
       "type": "object",
       "properties": {
         "sku": {
-          "description": "Product sku. Package name for paid app, suffix of Finsky docid for\nin-app purchase and in-app subscription.\nMatch getSku() in Play InApp Billing API.",
+          "description": "Product sku. Package name for paid app, suffix of Finsky docid for in-app purchase and in-app subscription. Match getSku() in Play InApp Billing API.",
           "type": "string"
         },
         "skuType": {
@@ -2203,11 +2203,11 @@
       "type": "object",
       "properties": {
         "inAppPurchaseData": {
-          "description": "Contains all inapp purchase data in JSON format.\nSee details in table 6 of\nhttps://developer.android.com/google/play/billing/billing_reference.html.",
+          "description": "Contains all inapp purchase data in JSON format. See details in table 6 of https://developer.android.com/google/play/billing/billing_reference.html.",
           "type": "object"
         },
         "inAppDataSignature": {
-          "description": "Matches IN_APP_DATA_SIGNATURE from getPurchases() method in Play InApp\nBilling API.",
+          "description": "Matches IN_APP_DATA_SIGNATURE from getPurchases() method in Play InApp Billing API.",
           "type": "string"
         }
       }
@@ -2217,7 +2217,7 @@
       "type": "object",
       "properties": {
         "params": {
-          "description": "Optional. List of parameters associated with the HomeGraph structure the target\ndevice belongs to.",
+          "description": "Optional. List of parameters associated with the HomeGraph structure the target device belongs to.",
           "type": "object"
         }
       }
@@ -2244,7 +2244,7 @@
       }
     },
     "Context": {
-      "description": "Contains context information when user makes query. Such context includes but\nnot limited to info about active media session, state of canvas web app, etc.",
+      "description": "Contains context information when user makes query. Such context includes but not limited to info about active media session, state of canvas web app, etc.",
       "type": "object",
       "properties": {
         "media": {
@@ -2278,19 +2278,19 @@
       }
     },
     "HandlerResponse": {
-      "description": "Represents a response sent from a developer's fulfillment to Actions on\nGoogle.",
+      "description": "Represents a response sent from a developer's fulfillment to Actions on Google.",
       "type": "object",
       "properties": {
         "prompt": {
-          "description": "Optional. Represents the prompts to be sent to the user, these prompts\nwill be appended to previously added messages unless explicitly\noverwritten.",
+          "description": "Optional. Represents the prompts to be sent to the user, these prompts will be appended to previously added messages unless explicitly overwritten.",
           "$ref": "#/definitions/Prompt"
         },
         "scene": {
-          "description": "Optional. Represents the current and next scene. If `Scene.next` is set\nthe runtime will immediately transition to the specified scene.",
+          "description": "Optional. Represents the current and next scene. If `Scene.next` is set the runtime will immediately transition to the specified scene.",
           "$ref": "#/definitions/Scene"
         },
         "session": {
-          "description": "Optional. Describes data for the current session, session\nparameters can be created, updated, or removed by the fulfillment.",
+          "description": "Optional. Describes data for the current session, session parameters can be created, updated, or removed by the fulfillment.",
           "$ref": "#/definitions/Session"
         },
         "user": {
@@ -2298,7 +2298,7 @@
           "$ref": "#/definitions/User"
         },
         "home": {
-          "description": "Optional. Used to specify parameters related to the HomeGraph structure\nthat the target device belongs to. See\nhttps://developers.google.com/actions/smarthome/concepts/homegraph.",
+          "description": "Optional. Used to specify parameters related to the HomeGraph structure that the target device belongs to. See https://developers.google.com/actions/smarthome/concepts/homegraph.",
           "$ref": "#/definitions/Home"
         },
         "device": {
@@ -2316,7 +2316,7 @@
       "type": "object",
       "properties": {
         "speech": {
-          "description": "List of phrases the Action expects from the user's utterance for speech\nbiasing. Up to 1000 phrases are allowed.\nNote: This field has the same meaning as ExpectedInput.speech_biasing_hints\n      in the v2 API.",
+          "description": "List of phrases the Action expects from the user's utterance for speech biasing. Up to 1000 phrases are allowed. Note: This field has the same meaning as ExpectedInput.speech_biasing_hints in the v2 API.",
           "type": "array",
           "items": {
             "type": "string"
