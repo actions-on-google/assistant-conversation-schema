@@ -2279,6 +2279,11 @@
           "description": "Media progress of current active media file.",
           "type": "string",
           "format": "google-duration"
+        },
+        "index": {
+          "description": "0-based index of the current active media file in the list of media files in the media response.",
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
