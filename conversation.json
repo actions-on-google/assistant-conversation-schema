@@ -2271,6 +2271,10 @@
         "currentLocation": {
           "description": "Optional. The device location of the user. Note, this is only populated after location permissions are granted by the end user. See the location message for more details on which fields are set depending on coarse vs. fine grained permission.",
           "$ref": "#/definitions/Location"
+        },
+        "timeZone": {
+          "description": "Optional. Timezone associated with the request used to resolve datetime values. If not set, \"UTC\" is used.",
+          "$ref": "#/definitions/TimeZone"
         }
       }
     },
@@ -2285,6 +2289,20 @@
         "postalAddress": {
           "description": "Postal address. Requires the [DEVICE_PRECISE_LOCATION] or [DEVICE_COARSE_LOCATION] permission. When the coarse location permission is granted, only the 'postal_code' and 'locality' fields are expected to be populated. Precise location permission will populate additional fields like 'administrative_area' and 'address_lines'.",
           "$ref": "#/definitions/PostalAddress"
+        }
+      }
+    },
+    "TimeZone": {
+      "description": "Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "IANA Time Zone Database time zone, e.g. \"America/New_York\".",
+          "type": "string"
+        },
+        "version": {
+          "description": "Optional. IANA Time Zone Database version number, e.g. \"2019a\".",
+          "type": "string"
         }
       }
     },
