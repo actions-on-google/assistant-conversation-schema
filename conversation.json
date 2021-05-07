@@ -588,7 +588,11 @@
           "type": "boolean"
         },
         "enableFullScreen": {
-          "description": "Indicates the canvas application chooses to use the full screen, not relying on the header to occupy space at the top of the screen. Default to be false.",
+          "description": "If true the canvas application will occupy the full screen and not have a header at the top. Default value: false.",
+          "type": "boolean"
+        },
+        "continueTtsDuringTouch": {
+          "description": "If true, screen taps will not stop TTS for the entire canvas session. Default value: false.",
           "type": "boolean"
         }
       }
